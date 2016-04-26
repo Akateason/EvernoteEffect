@@ -13,13 +13,11 @@
 static NSString *reuseIdentifier = @"Cell" ;
 static CGFloat topPadding = 20 ;
 
-
 @interface ViewController () <UICollectionViewDelegate,UICollectionViewDataSource>
 {
     NSMutableArray      *colorArray ;
     NSInteger           rowNumber ;
     UICollectionView    *collectionView ;
-    
 }
 @end
 
@@ -33,9 +31,12 @@ static CGFloat topPadding = 20 ;
     rowNumber = 15 ;
     self.view.backgroundColor = [UIColor lightGrayColor] ;
     EvernoteLayout *layout = [[EvernoteLayout alloc] init] ;
-    collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, topPadding, screenWidth, screenHeight)
+    collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0,
+                                                                        topPadding,
+                                                                        screenWidth,
+                                                                        screenHeight - topPadding)
                                         collectionViewLayout:layout] ;
-    collectionView.backgroundColor = [UIColor blueColor] ;
+    collectionView.backgroundColor = [UIColor lightGrayColor] ;
     collectionView.dataSource = self ;
     collectionView.delegate = self ;
     collectionView.alwaysBounceVertical = false ;
@@ -77,7 +78,7 @@ static CGFloat topPadding = 20 ;
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath] ;
     cell.backgroundColor = colorArray[colorArray.count - 1 - indexPath.section] ;
     cell.label.text = [NSString stringWithFormat:@"Notebook + %@",@(indexPath.section + 1)] ;
-    
+    cell.label.textColor = [UIColor whiteColor] ;
     return cell ;
 }
 

@@ -10,9 +10,12 @@
 
 @implementation CollectionViewCell
 
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     [super awakeFromNib];
     // Initialization code
+    
+    self.layer.cornerRadius = 5. ;
 }
 
 @end

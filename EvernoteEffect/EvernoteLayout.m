@@ -9,29 +9,29 @@
 #import "EvernoteLayout.h"
 
 
-static CGFloat cellHeight = 45 ;
-static CGFloat SpringFactor = 10.0 ;
+static CGFloat cellHeight = 50. ;
+static CGFloat SpringFactor = 10. ;
 
 @implementation EvernoteLayout
 
 - (instancetype)init
 {
-    self = [super init];
+    self = [super init] ;
     if (self) {
         self.itemSize = CGSizeMake(cellWidth, cellHeight) ;
         self.headerReferenceSize = CGSizeMake(screenWidth, verticallyPadding) ;
     }
-    return self;
+    return self ;
 }
 
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
-    self = [super initWithCoder:coder];
+    self = [super initWithCoder:coder] ;
     if (self) {
         self.itemSize = CGSizeMake(cellWidth, cellHeight) ;
         self.headerReferenceSize = CGSizeMake(screenWidth, verticallyPadding) ;
     }
-    return self;
+    return self ;
 }
 
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds
@@ -54,17 +54,19 @@ static CGFloat SpringFactor = 10.0 ;
     {
         if (attr.representedElementCategory == UICollectionElementCategoryCell)
         {
-            CGRect cellRect = attr.frame;
-            if ( offsetY <= 0 ){
-                float distance = fabs(offsetY) / SpringFactor;
-                cellRect.origin.y += offsetY + distance * (attr.indexPath.section + 1);
-            }else if ( bottomOffset > 0 ) {
-                float distance = bottomOffset / SpringFactor;
+            CGRect cellRect = attr.frame ;
+            if ( offsetY <= 0 )
+            {
+                float distance = fabs(offsetY) / SpringFactor ;
+                cellRect.origin.y += offsetY + distance * (attr.indexPath.section + 1) ;
+            }
+            else if ( bottomOffset > 0 )
+            {
+                float distance = bottomOffset / SpringFactor ;
                 cellRect.origin.y += bottomOffset - distance * (numOfItems - attr.indexPath.section) ;
             }
-            attr.frame = cellRect;
+            attr.frame = cellRect ;
         }
-
     }
     
     return attrsArray;
