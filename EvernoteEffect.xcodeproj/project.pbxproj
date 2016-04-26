@@ -15,6 +15,9 @@
 		60EE181F1CCE288900429004 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60EE181D1CCE288900429004 /* LaunchScreen.storyboard */; };
 		60EE182A1CCE288900429004 /* EvernoteEffectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE18291CCE288900429004 /* EvernoteEffectTests.m */; };
 		60EE18351CCE288900429004 /* EvernoteEffectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE18341CCE288900429004 /* EvernoteEffectUITests.m */; };
+		60EE18441CCE28E100429004 /* EvernoteLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE18431CCE28E100429004 /* EvernoteLayout.m */; };
+		60EE18481CCE303100429004 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE18461CCE303100429004 /* CollectionViewCell.m */; };
+		60EE18491CCE303100429004 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60EE18471CCE303100429004 /* CollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,11 @@
 		60EE18301CCE288900429004 /* EvernoteEffectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EvernoteEffectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60EE18341CCE288900429004 /* EvernoteEffectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EvernoteEffectUITests.m; sourceTree = "<group>"; };
 		60EE18361CCE288900429004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60EE18421CCE28E100429004 /* EvernoteLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvernoteLayout.h; sourceTree = "<group>"; };
+		60EE18431CCE28E100429004 /* EvernoteLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvernoteLayout.m; sourceTree = "<group>"; };
+		60EE18451CCE303100429004 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		60EE18461CCE303100429004 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		60EE18471CCE303100429004 /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +113,11 @@
 				60EE18131CCE288900429004 /* AppDelegate.m */,
 				60EE18151CCE288900429004 /* ViewController.h */,
 				60EE18161CCE288900429004 /* ViewController.m */,
+				60EE18421CCE28E100429004 /* EvernoteLayout.h */,
+				60EE18431CCE28E100429004 /* EvernoteLayout.m */,
+				60EE18451CCE303100429004 /* CollectionViewCell.h */,
+				60EE18461CCE303100429004 /* CollectionViewCell.m */,
+				60EE18471CCE303100429004 /* CollectionViewCell.xib */,
 				60EE18181CCE288900429004 /* Main.storyboard */,
 				60EE181B1CCE288900429004 /* Assets.xcassets */,
 				60EE181D1CCE288900429004 /* LaunchScreen.storyboard */,
@@ -207,6 +220,7 @@
 				TargetAttributes = {
 					60EE180B1CCE288900429004 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 5D74XHX7AD;
 					};
 					60EE18241CCE288900429004 = {
 						CreatedOnToolsVersion = 7.3;
@@ -245,6 +259,7 @@
 			files = (
 				60EE181F1CCE288900429004 /* LaunchScreen.storyboard in Resources */,
 				60EE181C1CCE288900429004 /* Assets.xcassets in Resources */,
+				60EE18491CCE303100429004 /* CollectionViewCell.xib in Resources */,
 				60EE181A1CCE288900429004 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +286,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				60EE18171CCE288900429004 /* ViewController.m in Sources */,
+				60EE18481CCE303100429004 /* CollectionViewCell.m in Sources */,
+				60EE18441CCE28E100429004 /* EvernoteLayout.m in Sources */,
 				60EE18141CCE288900429004 /* AppDelegate.m in Sources */,
 				60EE18111CCE288900429004 /* main.m in Sources */,
 			);
@@ -415,10 +432,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = EvernoteEffect/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teason.EvernoteEffect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -426,10 +446,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = EvernoteEffect/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teason.EvernoteEffect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

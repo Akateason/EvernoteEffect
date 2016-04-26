@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CollectionViewCell.h
 //  EvernoteEffect
 //
 //  Created by teason on 16/4/25.
@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@interface CollectionViewCell : UICollectionViewCell
 
-
-@interface ViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
-
